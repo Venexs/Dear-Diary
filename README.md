@@ -30,6 +30,7 @@ Pathlib
 pip install pathlib
 ```
 
+Once thats done, in the folder there are 2 .tff files (Font Files) in the folder called 'Fonts'. Please double click them and install them as they are very important.
 
 ## Usage
 
