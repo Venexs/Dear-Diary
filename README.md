@@ -41,7 +41,3 @@ The software is completely offline so, your records are kept safe on a .JSON fil
 ## Contributing
 
 If anyone wants to change something in the code, create a Pull request or a raise an Issue.
-
-## License
-
-[MIT](https://choosealicense.com/licenses/mit/)
