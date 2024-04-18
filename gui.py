@@ -90,16 +90,6 @@ tim='21:00'
 action='(insert)'
 time_obj = datetime.datetime.strptime(tim, "%H:%M")
 
-with open('Files/personal_info.json', 'r') as fins:
-    rexs=json.load(fins)
-    if 'info' not in rexs:
-        subprocess.Popen(['python', 'GUI/Adv_test/build/gui.py'])
-        window.destroy()
-    else:
-        action=rexs['info']['action']
-        tim=rexs['info']['time']
-        time_obj = datetime.datetime.strptime(tim, "%H:%M")
-
 def run_at_specific_time(target_time):
     while True:
         now = datetime.datetime.now()
@@ -130,6 +120,16 @@ canvas = Canvas(
     highlightthickness = 0,
     relief = "ridge"
 )
+
+with open('Files/personal_info.json', 'r') as fins:
+    rexs=json.load(fins)
+    if 'info' not in rexs:
+        subprocess.Popen(['python', 'GUI/Adv_test/build/gui.py'])
+        window.destroy()
+    else:
+        action=rexs['info']['action']
+        tim=rexs['info']['time']
+        time_obj = datetime.datetime.strptime(tim, "%H:%M")
 
 # ? ======================================================
 # ? PAGE 1
@@ -480,7 +480,7 @@ canvas.create_text(
     577.0,
     318.0,
     anchor="nw",
-    text="Did you do (insert action that makes you happy)",
+    text=f"Did you do {action}",
     fill="#000000",
     font=("Just Another Hand", 20 * -1)
 )

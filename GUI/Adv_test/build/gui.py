@@ -37,6 +37,7 @@ canvas = Canvas(
 )
 
 def pers_record(action, hour, minute):
+    print(0)
     act=action.get()
     hr=hour.get()
     mi=minute.get()
@@ -51,8 +52,9 @@ def pers_record(action, hour, minute):
     d['info']['action']=act
     d['info']['time']=tim
 
-    with open('Files/records.json', 'w') as fin:
+    with open('Files/personal_info.json', 'w') as fin:
         json.dump(d, fin, indent=4)
+        print(1)
 
     subprocess.Popen(['python', 'gui.py'])
     window.quit()
